@@ -1,3 +1,202 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --bg: #0b0f17;
+  --panel: rgba(255,255,255,0.06);
+  --panel-2: rgba(255,255,255,0.09);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.65);
+  --border: rgba(255,255,255,0.12);
 
-@import "tailwindcss";
+  --primary: #7c5cff;
+  --danger: #ff4d6d;
+
+  --radius: 16px;
+  --shadow: 0 12px 40px rgba(0,0,0,0.35);
+
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+
+  --max: 1100px;
+  --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: var(--font);
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(124,92,255,0.25), transparent 60%),
+              radial-gradient(800px 500px at 80% 10%, rgba(255,77,109,0.18), transparent 55%),
+              var(--bg);
+  color: var(--text);
+}
+
+a{ color: inherit; text-decoration: none; }
+.container{
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+main.container{ padding: var(--space-5) 0; }
+
+.card{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-4);
+  backdrop-filter: blur(10px);
+}
+
+.card__title{
+  margin: 0 0 var(--space-3);
+  font-size: 1.05rem;
+}
+
+.page__header{ margin-bottom: var(--space-4); }
+.page__title{ margin: 0; font-size: 1.6rem; }
+.page__subtitle{ margin: var(--space-1) 0 0; color: var(--muted); }
+
+.grid{
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-4);
+}
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+.form{ display: grid; gap: var(--space-3); }
+.field{ display: grid; gap: 8px; }
+.label{ font-size: 0.9rem; color: var(--muted); }
+
+.input{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  outline: none;
+}
+.input:focus{
+  border-color: rgba(124,92,255,0.7);
+  box-shadow: 0 0 0 4px rgba(124,92,255,0.18);
+}
+.textarea{ resize: vertical; }
+
+.actions{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.btn{
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.08s ease, opacity 0.2s ease;
+}
+.btn:active{ transform: translateY(1px); }
+.btn--primary{
+  border-color: rgba(124,92,255,0.55);
+  background: rgba(124,92,255,0.25);
+}
+.btn--danger{
+  border-color: rgba(255,77,109,0.55);
+  background: rgba(255,77,109,0.20);
+}
+.btn--ghost{
+  background: transparent;
+}
+
+.pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+.pill--muted{ color: var(--muted); }
+
+.link{
+  display: inline-block;
+  margin-top: var(--space-3);
+  color: rgba(124,92,255,0.95);
+}
+.link:hover{ text-decoration: underline; }
+
+/* Toggle */
+.toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.toggle input{ display: none; }
+.toggle__track{
+  width: 44px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.08);
+  position: relative;
+}
+.toggle__thumb{
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.8);
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: left 0.15s ease, background 0.15s ease;
+}
+.toggle input:checked + .toggle__track{
+  background: rgba(124,92,255,0.25);
+  border-color: rgba(124,92,255,0.55);
+}
+.toggle input:checked + .toggle__track .toggle__thumb{
+  left: 21px;
+  background: rgba(124,92,255,0.95);
+}
+
+/* Detail layout helpers */
+.detail__row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.detail__title{ margin: 0; font-size: 1.2rem; }
+.detail__desc{ color: var(--muted); line-height: 1.55; }
+
+.detail__meta{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+@media (max-width: 900px){
+  .detail__meta{ grid-template-columns: 1fr; }
+}
+.meta{
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+}
+.meta__label{ display: block; color: var(--muted); font-size: 0.85rem; }
+.meta__value{ display: block; margin-top: 6px; }

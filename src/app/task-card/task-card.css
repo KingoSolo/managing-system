@@ -1,0 +1,10 @@
+.task-card__top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-card__title{ margin: 0; font-size: 1.1rem; }
+.task-card__desc{ margin: 12px 0 0; color: var(--muted); line-height: 1.5; }
+.task-card__meta{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }

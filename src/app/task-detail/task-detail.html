@@ -1,0 +1,46 @@
+<section class="page">
+  <header class="page__header">
+    <h2 class="page__title">Task Detail</h2>
+    <p class="page__subtitle">View and manage a single task.</p>
+  </header>
+
+  <div class="card">
+    <div class="detail__row">
+      <h3 class="detail__title">Task title</h3>
+
+      <label class="toggle" aria-label="Mark task complete">
+        <input type="checkbox" />
+        <span class="toggle__track">
+          <span class="toggle__thumb"></span>
+        </span>
+      </label>
+    </div>
+
+    <p class="detail__desc">
+      Task description goes here. Keep it readable, not a wall of text.
+    </p>
+
+    <div class="detail__meta">
+      <div class="meta">
+        <span class="meta__label">Due date</span>
+        <span class="meta__value">2026-02-20</span>
+      </div>
+
+      <div class="meta">
+        <span class="meta__label">Created</span>
+        <span class="meta__value">2026-02-15</span>
+      </div>
+
+      <div class="meta">
+        <span class="meta__label">Status</span>
+        <span class="meta__value">Incomplete</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn--primary" type="button">Edit</button>
+      <button class="btn btn--danger" type="button">Delete</button>
+      <a class="btn btn--ghost" routerLink="/">Back</a>
+    </div>
+  </div>
+</section>
