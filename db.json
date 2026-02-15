@@ -1,0 +1,23 @@
+{
+  
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Finish Angular Scaffold",
+      "description": "Complete routing and component structure",
+      "dueDate": "2026-02-20T00:00:00.000Z",
+      "createdAt": "2026-02-15T09:00:00.000Z",
+      "completed": false
+      
+    },
+    {
+     "id": 2,
+      "title": "Finish next gen bootcamp",
+      "description": "Complete all my projects",
+      "dueDate": "2026-02-20T00:00:00.000Z",
+      "createdAt": "2026-02-15T09:00:00.000Z",
+      "completed": false
+      
+    }
+  ]
+}

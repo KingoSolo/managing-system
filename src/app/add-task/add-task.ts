@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { TaskCard} from '../task-card/task-card';
+import { Task } from '../task/task';
 
 @Component({
   selector: 'app-add-task',
   standalone: true,
-  imports: [TaskCard],
+  imports: [Task, Task],
   templateUrl: './add-task.html',
   styleUrl: './add-task.css',
 })

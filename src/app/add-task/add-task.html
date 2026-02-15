@@ -1,1 +1,41 @@
-<p>add-task works!</p>
+<section class="page">
+  <header class="page__header">
+    <h2 class="page__title">Home</h2>
+    <p class="page__subtitle">Create a new task and stay on top of your life.</p>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <h3 class="card__title">Add Task</h3>
+
+      <form class="form">
+        <div class="field">
+          <label class="label">Title</label>
+          <input class="input" type="text" placeholder="e.g. Finish Angular scaffolding" />
+        </div>
+
+        <div class="field">
+          <label class="label">Description</label>
+          <textarea class="input textarea" rows="4" placeholder="What needs to be done?"></textarea>
+        </div>
+
+        <div class="field">
+          <label class="label">Due date</label>
+          <input class="input" type="date" />
+        </div>
+
+        <div class="actions">
+          <button class="btn btn--primary" type="button">Create Task</button>
+          <button class="btn btn--ghost" type="reset">Clear</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3 class="card__title">Preview</h3>
+
+      <!-- Just one TaskCard shown for scaffold purposes -->
+      <app-task></app-task>
+    </div>
+  </div>
+</section>

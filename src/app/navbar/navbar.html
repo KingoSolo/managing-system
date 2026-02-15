@@ -1,1 +1,13 @@
-<p>navbar works!</p>
+<header class="nav">
+  <div class="nav__inner container">
+    <a class="brand" routerLink="/">
+      <span class="brand__logo">✓</span>
+      <span class="brand__text">TaskApp</span>
+    </a>
+
+    <nav class="nav__links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/task" routerLinkActive="active">TaskCard</a>
+    </nav>
+  </div>
+</header>

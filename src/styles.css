@@ -173,7 +173,6 @@ main.container{ padding: var(--space-5) 0; }
   background: rgba(124,92,255,0.95);
 }
 
-/* Detail layout helpers */
 .detail__row{
   display: flex;
   align-items: center;

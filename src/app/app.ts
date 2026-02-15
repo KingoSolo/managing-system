@@ -9,6 +9,6 @@ import { Navbar } from './navbar/navbar';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class AppComponent {
+export class App {
 
 }
