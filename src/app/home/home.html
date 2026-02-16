@@ -1,1 +1,53 @@
-<p>home works!</p>
+<section class="page">
+  <header class="page__header">
+    <h2 class="page__title">Dashboard</h2>
+    <p class="page__subtitle">Overview of your tasks and progress.</p>
+  </header>
+
+  @if (stats$ | async; as s) {
+    <div class="stats">
+      <div class="card stat">
+        <span class="stat__label">Total Tasks: </span>
+        <span class="stat__value">{{ s.total }}</span>
+      </div>
+
+      <div class="card stat">
+        <span class="stat__label">Completed: </span>
+        <span class="stat__value stat__value--success">{{ s.completed }}</span>
+      </div>
+
+      <div class="card stat">
+        <span class="stat__label">Pending: </span>
+        <span class="stat__value stat__value--warning">{{ s.pending }}</span>
+      </div>
+    </div>
+
+    <div class="card card--soft actions-block">
+      <h3 class="card__title">Quick Actions</h3>
+      <div class="actions">
+        <a routerLink="/task" class="btn btn--primary">View All Tasks</a>
+        <a routerLink="/addtask" class="btn btn--ghost">Add New Task</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="card__title">Recent Tasks</h3>
+
+      @if (s.recent.length === 0) {
+        <p class="page__subtitle">No tasks yet. Add one to get started.</p>
+      } @else {
+        <ul class="recent-list">
+          @for (t of s.recent; track t.id) {
+            <li>
+              <span>{{ t.title }}</span>
+              <span class="pill pill--muted">{{ t.completed ? 'Completed' : 'Pending' }}</span>
+            </li>
+          }
+        </ul>
+
+        <a routerLink="/task" class="link">View all tasks →</a>
+
+      }
+    </div>
+  }
+</section>

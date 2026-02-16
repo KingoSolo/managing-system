@@ -1,6 +1,9 @@
-<article class="card task-card">
-  <div class="task-card__top">
-    <h3 class="task-card__title">Task title</h3>
+@if (task$ | async; as tasks){
+
+  @for (task of tasks; track task.id){
+  <article class="card task-card">
+  <div class="task-card__top" >
+    <h3 class="task-card__title">{{task.title}}</h3>
 
     <label class="toggle" aria-label="Mark task complete">
       <input type="checkbox" />
@@ -10,12 +13,16 @@
     </label>
   </div>
 
-  <p class="task-card__desc">Task description preview goes here…</p>
+  <p class="task-card__desc">{{task.description}}</p>
 
   <div class="task-card__meta">
-    <span class="pill">Due: 2026-02-20</span>
-    <span class="pill pill--muted">Created: 2026-02-15</span>
+    <span class="pill">Due: {{task.dueDate}}</span>
+    <span class="pill pill--muted">Created: {{task.createdAt}}</span>
   </div>
 
-  <a class="link" routerLink="/task">Open details →</a>
+  <a class="link" [routerLink]="['/task',task.id]">Open details →</a>
 </article>
+  }
+  
+}
+

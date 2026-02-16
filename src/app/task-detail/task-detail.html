@@ -1,12 +1,13 @@
+@if (task$ | async; as task){
 <section class="page">
   <header class="page__header">
-    <h2 class="page__title">Task Detail</h2>
+    <h2 class="page__title">{{task.title}}</h2>
     <p class="page__subtitle">View and manage a single task.</p>
   </header>
 
   <div class="card">
     <div class="detail__row">
-      <h3 class="detail__title">Task title</h3>
+      <h3 class="detail__title">{{task.title}}</h3>
 
       <label class="toggle" aria-label="Mark task complete">
         <input type="checkbox" />
@@ -17,23 +18,23 @@
     </div>
 
     <p class="detail__desc">
-      Task description goes here. Keep it readable, not a wall of text.
+     {{task.description}}
     </p>
 
     <div class="detail__meta">
       <div class="meta">
-        <span class="meta__label">Due date</span>
-        <span class="meta__value">2026-02-20</span>
+        <span class="meta__label">Due date: </span>
+        <span class="meta__value">{{task.dueDate}}</span>
       </div>
 
       <div class="meta">
-        <span class="meta__label">Created</span>
-        <span class="meta__value">2026-02-15</span>
+        <span class="meta__label">Created: </span>
+        <span class="meta__value">{{task.createdAt}}</span>
       </div>
 
       <div class="meta">
-        <span class="meta__label">Status</span>
-        <span class="meta__value">Incomplete</span>
+        <span class="meta__label">Completed: </span>
+        <span class="meta__value">{{task.completed}}</span>
       </div>
     </div>
 
@@ -44,3 +45,5 @@
     </div>
   </div>
 </section>
+}
+
